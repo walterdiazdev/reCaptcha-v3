@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Walter Diaz, mail@walterdiaz.dev">
+	<meta name="keywords" content="walter diaz,recaptcha,recaptcha v3,php,ejemplo,tutorial"/>
+	<meta name="description" content="Ejemplo de implementación de Google reCaptcha v3">
+	<meta name="language" content="ES">
+	<meta name="robots" content="index,follow" />
+	<meta name="url" content="https://walterdiaz.dev">
+	<meta name="identifier-URL" content="https://walterdiaz.dev">
+	<meta name="Classification" content="Tutorial">
+	<meta name="category" content="Tutorial">
+	<meta name="coverage" content="Worldwide">
+	<meta name="distribution" content="Global">
+    <title>Formulario</title>
+</head>
+<body>
+
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script>
+        function onSubmit(token) {
+          document.getElementById("nuestro-formulario").submit();
+        }
+    </script>
+      
+
+    <form id="nuestro-formulario" method="post" action="procesar.php">
+        <input type="text" name="nombre" placeholder="Ingresa tu nombre"><br>
+        <input type="email" name="email" placeholder="Ingresa tu correo"><br>
+        <button class="g-recaptcha" 
+            data-sitekey="TU-CLAVE-PUBLICA" 
+            data-callback='onSubmit' 
+            data-action='submit'>Enviar</button>
+    </form>
+    
+</body>
+</html>
